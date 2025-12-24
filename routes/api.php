@@ -64,3 +64,7 @@ Route::get('/kuis/{id_kuis}/students-done',[JawabanSoalController::class, 'stude
 Route::post('/diskusi', [DiskusiController::class, 'store']);
 Route::get('/diskusi/mata-pelajaran/{id}', [DiskusiController::class, 'getByMataPelajaran']);
 Route::delete('/diskusi', [DiskusiController::class, 'destroy']);
+
+use App\Http\Controllers\Auth\PasswordResetController;
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink']);
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword']);
